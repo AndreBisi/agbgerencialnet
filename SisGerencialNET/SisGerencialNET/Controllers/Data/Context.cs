@@ -3,9 +3,12 @@ using SisGerencialNET.Models;
 
 namespace SisGerencialNET.Controllers.Data
 {
-    public class PlanoContext : DbContext
+    public class Context : DbContext
     {
-        public DbSet<Plano> Planos { get; set; }
+        public DbSet<Bairro>? Bairros { get; set; }
+        public DbSet<TipoBairro>? TiposBairro { get; set; }
+
+        public DbSet<Plano>? Planos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -14,7 +17,10 @@ namespace SisGerencialNET.Controllers.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new BairroConfiguration());
+            modelBuilder.ApplyConfiguration(new TipoBairroConfiguration());
             modelBuilder.ApplyConfiguration(new PlanoConfiguration());
+
         }
     }
 }

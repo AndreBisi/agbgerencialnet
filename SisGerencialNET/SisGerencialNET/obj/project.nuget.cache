@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZrVoL5cRFrGZ2sneXhIOFjwS/wSF6YgvfoKa8q9G40hk+5a894BnuGJ8x7GEV375rqoq/n6EYBmG4AadBUpZ5A==",
+  "dgSpecHash": "NrKgKhceBMeSKnHgDDFBnt8nKsdlgTv0aFyz37/0z/AUXk4AhFr3mlM0wR4RDjnYwO1q8FK7D6VywLy5438AUw==",
   "success": true,
-  "projectFilePath": "C:\\AGBSoft\\CSharp\\SisGerancialNET\\SisGerencialNET\\SisGerencialNET\\SisGerencialNET.csproj",
+  "projectFilePath": "C:\\AGBSoft\\CSharp\\SisGerencialNET\\SisGerencialNET\\SisGerencialNET\\SisGerencialNET.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AndreBisi\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.4\\microsoft.entityframeworkcore.6.0.4.nupkg.sha512",
     "C:\\Users\\AndreBisi\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.4\\microsoft.entityframeworkcore.abstractions.6.0.4.nupkg.sha512",

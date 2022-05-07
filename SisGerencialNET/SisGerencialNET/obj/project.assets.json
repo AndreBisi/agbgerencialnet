@@ -852,11 +852,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\AGBSoft\\CSharp\\SisGerancialNET\\SisGerencialNET\\SisGerencialNET\\SisGerencialNET.csproj",
+      "projectUniqueName": "C:\\AGBSoft\\CSharp\\SisGerencialNET\\SisGerencialNET\\SisGerencialNET\\SisGerencialNET.csproj",
       "projectName": "SisGerencialNET",
-      "projectPath": "C:\\AGBSoft\\CSharp\\SisGerancialNET\\SisGerencialNET\\SisGerencialNET\\SisGerencialNET.csproj",
+      "projectPath": "C:\\AGBSoft\\CSharp\\SisGerencialNET\\SisGerencialNET\\SisGerencialNET\\SisGerencialNET.csproj",
       "packagesPath": "C:\\Users\\AndreBisi\\.nuget\\packages\\",
-      "outputPath": "C:\\AGBSoft\\CSharp\\SisGerancialNET\\SisGerencialNET\\SisGerencialNET\\obj\\",
+      "outputPath": "C:\\AGBSoft\\CSharp\\SisGerencialNET\\SisGerencialNET\\SisGerencialNET\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

@@ -8,11 +8,11 @@ namespace SisGerencialNET.Controllers.Data
     [Route("[controller]")]
     public class TipoBairroController : ControllerBase
     {
-        private TipoBairroContext _context;
+        private Context _context;
 
         public TipoBairroController()
         {
-            _context = new TipoBairroContext();
+            _context = new Context();
         }
 
         [HttpGet]

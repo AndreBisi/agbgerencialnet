@@ -22,6 +22,10 @@ namespace SisGerencialNET.Controllers.Data
                 .HasColumnName("bairronome")
                 .HasColumnType("varchar(80)")
                 .IsRequired();
+
+            builder
+                .Property(a => a.TipoBairroID)
+                .HasColumnName("tipobairrocod");
                
         }
     }

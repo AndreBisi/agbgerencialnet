@@ -21,12 +21,14 @@ if (app.Environment.IsDevelopment())
 }
 
 
-using (var contexto = new BairroContext())
+using (var contexto = new Context())
 {
-    var contexto2 = contexto.TiposBairro
-        .Include(b => b.BairroList);
+    var contexto2 = contexto.Bairros
+        .Include(a => a.TipoBairro);
 
-    foreach( var bairro in contexto.Bairros )
+    //    .Include(b => b.TiposBairro);
+
+    foreach( var bairro in contexto2 )
     {
         Console.WriteLine(bairro);
     }

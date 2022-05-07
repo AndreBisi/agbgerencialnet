@@ -8,27 +8,20 @@ namespace SisGerencialNET.Controllers
     [Route("[controller]")]
     public class BairroController : ControllerBase
     {
-        private BairroContext _context;
+        private Context _context;
 
         public BairroController()
         {
-            _context = new BairroContext();
+            _context = new Context();
         }
 
         [HttpGet]
         public IActionResult get()
         {
-            /*var bairros = _context.Bairros
-                .Include(i => i.TipoBairro);*/
+            var contexto2 = _context.Bairros
+            .Include(a => a.TipoBairro);
 
-            /*var tiposBairro = new TipoBairroContext();
-
-            var tiposBairro2 = tiposBairro.TiposBairro
-                .Include(a => a.BairroList);
-                
-            return Ok(tiposBairro2);*/
-
-            return Ok(_context.Bairros);
+            return Ok(contexto2);
         }
     }
 }

@@ -8,11 +8,11 @@ namespace SisGerencialNET.Controllers
     [Route("[controller]")]
     public class PlanoController : ControllerBase
     {
-        private PlanoContext _context;
+        private Context _context;
 
         public PlanoController()
         {
-            _context = new PlanoContext();
+            _context = new Context();
         }
 
         [HttpGet]
