@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "NrKgKhceBMeSKnHgDDFBnt8nKsdlgTv0aFyz37/0z/AUXk4AhFr3mlM0wR4RDjnYwO1q8FK7D6VywLy5438AUw==",
+  "dgSpecHash": "NDiMRbzUF5U+AkNRdt4M3N1Adw9yWuCoW4naVTPMZMLus84CAVy8FZ4miiCQngK/MG4LipatY26xwGw9sAtn/w==",
   "success": true,
   "projectFilePath": "C:\\AGBSoft\\CSharp\\SisGerencialNET\\SisGerencialNET\\SisGerencialNET\\SisGerencialNET.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\AndreBisi\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\AndreBisi\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\AndreBisi\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\AndreBisi\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.4\\microsoft.entityframeworkcore.6.0.4.nupkg.sha512",
     "C:\\Users\\AndreBisi\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.4\\microsoft.entityframeworkcore.abstractions.6.0.4.nupkg.sha512",
     "C:\\Users\\AndreBisi\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.4\\microsoft.entityframeworkcore.analyzers.6.0.4.nupkg.sha512",

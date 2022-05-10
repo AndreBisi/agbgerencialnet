@@ -7,8 +7,12 @@ namespace SisGerencialNET.Controllers.Data
     {
         public DbSet<Bairro>? Bairros { get; set; }
         public DbSet<TipoBairro>? TiposBairro { get; set; }
-
         public DbSet<Plano>? Planos { get; set; }
+
+        public Context(DbContextOptions<Context> opt) : base(opt)
+        {
+
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

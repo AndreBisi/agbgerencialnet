@@ -97,3 +97,5 @@ C:\AGBSoft\CSharp\SisGerencialNET\SisGerencialNET\SisGerencialNET\obj\Debug\net6
 C:\AGBSoft\CSharp\SisGerencialNET\SisGerencialNET\SisGerencialNET\obj\Debug\net6.0\SisGerencialNET.pdb
 C:\AGBSoft\CSharp\SisGerencialNET\SisGerencialNET\SisGerencialNET\obj\Debug\net6.0\SisGerencialNET.genruntimeconfig.cache
 C:\AGBSoft\CSharp\SisGerencialNET\SisGerencialNET\SisGerencialNET\obj\Debug\net6.0\ref\SisGerencialNET.dll
+C:\AGBSoft\CSharp\SisGerencialNET\SisGerencialNET\SisGerencialNET\bin\Debug\net6.0\AutoMapper.dll
+C:\AGBSoft\CSharp\SisGerencialNET\SisGerencialNET\SisGerencialNET\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

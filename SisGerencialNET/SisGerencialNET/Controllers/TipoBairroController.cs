@@ -10,9 +10,9 @@ namespace SisGerencialNET.Controllers.Data
     {
         private Context _context;
 
-        public TipoBairroController()
+        public TipoBairroController(Context context)
         {
-            _context = new Context();
+            _context = context;
         }
 
         [HttpGet]

@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using SisGerencialNET.Controllers.Data;
+using SisGerencialNET.Data.Dtos;
 using SisGerencialNET.Models;
 
 namespace SisGerencialNET.Controllers
@@ -9,10 +11,12 @@ namespace SisGerencialNET.Controllers
     public class PlanoController : ControllerBase
     {
         private Context _context;
+        private IMapper _mapper;
 
-        public PlanoController()
+        public PlanoController(Context context, IMapper mapper)
         {
-            _context = new Context();
+            _context = context;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -25,7 +29,12 @@ namespace SisGerencialNET.Controllers
         public IActionResult getPorId( int id )
         {
             Plano plano = _context.Planos.FirstOrDefault(plano => plano.Id == id);
-            if (plano != null) return Ok(plano);
+            if (plano != null)
+            {
+                ReadPlanoDto planoDto = _mapper.Map<ReadPlanoDto>(plano);
+
+                return Ok(planoDto);
+            }
             return NotFound();
         }
     }

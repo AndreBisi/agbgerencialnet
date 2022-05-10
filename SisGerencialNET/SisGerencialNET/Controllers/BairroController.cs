@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SisGerencialNET.Controllers.Data;
+using SisGerencialNET.Data.Dtos;
+using SisGerencialNET.Models;
 
 namespace SisGerencialNET.Controllers
 {
@@ -10,18 +13,40 @@ namespace SisGerencialNET.Controllers
     {
         private Context _context;
 
-        public BairroController()
+        private IMapper _mapper;
+        public BairroController( Context context, IMapper mapper)
         {
-            _context = new Context();
+            _context = context;
+            _mapper = mapper;
         }
 
         [HttpGet]
         public IActionResult get()
         {
-            var contexto2 = _context.Bairros
-            .Include(a => a.TipoBairro);
+            return Ok(_context.Bairros);
+        }
 
-            return Ok(contexto2);
+        [HttpPost]
+        public IActionResult post([FromBody] Bairro bairro)
+        {
+            _context.Bairros.Add(bairro);
+            _context.SaveChanges();
+            return CreatedAtAction(nameof(getPorId), new { Id = bairro.Id }, bairro);
+
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult getPorId(int id)
+        {
+
+            Bairro bairro = _context.Bairros.FirstOrDefault(bairro => bairro.Id == id);
+            if (bairro != null)
+            {
+                ReadBairroDto bairroDto = _mapper.Map<ReadBairroDto>(bairro);
+
+                return Ok(bairroDto);
+            }
+            return NotFound();
         }
     }
 }
