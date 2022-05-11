@@ -14,10 +14,10 @@ namespace SisGerencialNET.Controllers.Data
 
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Server = localhost; Port = 5432; Database = DBGerencialNET; User Id = postgres; Password = porcos128");
-        }
+            //optionsBuilder.UseNpgsql("Server = localhost; Port = 5432; Database = DBGerencialNET; User Id = postgres; Password = porcos128");
+        }*/
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

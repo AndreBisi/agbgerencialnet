@@ -6,7 +6,6 @@ namespace SisGerencialNET.Data.Dtos
     {
         public int Id { get; set; } 
         public string Nome { get; set; }
-
-        public TipoBairro tipoBairro { get; set; }
+        public TipoBairro TipoBairro { get; set; }
     }
 }

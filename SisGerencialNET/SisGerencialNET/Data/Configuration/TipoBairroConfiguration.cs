@@ -27,7 +27,6 @@ namespace SisGerencialNET.Controllers.Data
                 .Property(a => a.Abreviacao)
                 .HasColumnName("tipobairroabrev")
                 .HasColumnType("varchar(8)");
-
         }
     }
 }

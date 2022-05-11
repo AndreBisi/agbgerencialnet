@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SisGerencialNET.Data.Dtos;
 using SisGerencialNET.Models;
 
 namespace SisGerencialNET.Controllers.Data
@@ -9,11 +11,15 @@ namespace SisGerencialNET.Controllers.Data
     public class TipoBairroController : ControllerBase
     {
         private Context _context;
+        private IMapper _mapper;
 
-        public TipoBairroController(Context context)
+        public TipoBairroController(Context context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
+
+        public ReadTipoBairroDto ReadTipoBairroDto { get; private set; }
 
         [HttpGet]
         public IActionResult get()
@@ -25,8 +31,18 @@ namespace SisGerencialNET.Controllers.Data
         public IActionResult getPorId(int id)
         {
             TipoBairro tipoBairro = _context.TiposBairro.FirstOrDefault(tipoBairro => tipoBairro.Id == id);
-            if (tipoBairro != null) return Ok(tipoBairro);
-            return NotFound();
+            if (tipoBairro != null)
+            {
+                ReadTipoBairroDto tipoBairroDto = _mapper.Map<ReadTipoBairroDto>(tipoBairro);
+
+                return Ok(tipoBairroDto);
+            }
+            return NotFound();  
+        }
+
+        private IActionResult Ok(object tipoBairroDto)
+        {
+            throw new NotImplementedException();
         }
 
         [HttpPost]

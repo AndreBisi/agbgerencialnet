@@ -4,11 +4,11 @@ using SisGerencialNET.Models;
 
 namespace SisGerencialNET.Profiles
 {
-    public class BairroProfile : Profile
+    public class TipoBairroProfile : Profile
     {
-        public BairroProfile()
+        public TipoBairroProfile()
         {
-            CreateMap<Bairro, ReadBairroDto>();
+            CreateMap<TipoBairro, ReadTipoBairroDto>();
         }
     }
 }

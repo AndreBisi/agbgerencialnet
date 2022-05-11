@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using SisGerencialNET.Data.Dtos;
+using SisGerencialNET.Models;
 
 namespace SisGerencialNET.Profiles
 {
@@ -7,7 +8,7 @@ namespace SisGerencialNET.Profiles
     {
         public PlanoProfile()
         {
-            CreateMap<PlanoProfile, ReadPlanoDto>();
+            CreateMap<Plano, ReadPlanoDto>();
         }
     }
 }

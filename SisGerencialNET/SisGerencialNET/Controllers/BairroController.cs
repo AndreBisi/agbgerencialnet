@@ -23,7 +23,12 @@ namespace SisGerencialNET.Controllers
         [HttpGet]
         public IActionResult get()
         {
-            return Ok(_context.Bairros);
+            Console.WriteLine("=========================");
+
+            var context2 = _context.TiposBairro
+                .Include(a => a.Bairros);
+
+            return Ok(context2);
         }
 
         [HttpPost]
@@ -32,13 +37,11 @@ namespace SisGerencialNET.Controllers
             _context.Bairros.Add(bairro);
             _context.SaveChanges();
             return CreatedAtAction(nameof(getPorId), new { Id = bairro.Id }, bairro);
-
         }
 
         [HttpGet("{id}")]
         public IActionResult getPorId(int id)
         {
-
             Bairro bairro = _context.Bairros.FirstOrDefault(bairro => bairro.Id == id);
             if (bairro != null)
             {

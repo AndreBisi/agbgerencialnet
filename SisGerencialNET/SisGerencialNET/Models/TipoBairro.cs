@@ -6,7 +6,12 @@
         public string Nome { get; set; }
         public string? Abreviacao { get; set; }
 
-        public ICollection<Bairro> Bairros { get; set; }
+        public IList<Bairro> Bairros { get; set; }
+
+        public TipoBairro()
+        {
+            Bairros = new List<Bairro>();   
+        }
 
         public override string ToString()
         {
