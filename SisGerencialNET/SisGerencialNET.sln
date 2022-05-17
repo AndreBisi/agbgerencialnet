@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SisGerencialNET", "SisGerencialNET\SisGerencialNET.csproj", "{216A5C6B-0AC6-49E5-94CB-308801C833C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SisGerencialNET", "SisGerencialNET\SisGerencialNET.csproj", "{216A5C6B-0AC6-49E5-94CB-308801C833C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

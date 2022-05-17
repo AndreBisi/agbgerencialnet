@@ -1,8 +1,9 @@
 ﻿using AutoMapper;
+using DataBaseControl;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using SisGerencialNET.Data.Dtos;
 using SisGerencialNET.Models;
+using System.Data;
 
 namespace SisGerencialNET.Controllers.Data
 {
@@ -12,6 +13,9 @@ namespace SisGerencialNET.Controllers.Data
     {
         private Context _context;
         private IMapper _mapper;
+        private DataBasePersistenceControl _control = new DataBasePersistenceControl();
+
+        DataBaseConnection _conexao = new DataBaseConnection();
 
         public TipoBairroController(Context context, IMapper mapper)
         {
@@ -30,19 +34,12 @@ namespace SisGerencialNET.Controllers.Data
         [HttpGet("{id}")]
         public IActionResult getPorId(int id)
         {
-            TipoBairro tipoBairro = _context.TiposBairro.FirstOrDefault(tipoBairro => tipoBairro.Id == id);
-            if (tipoBairro != null)
-            {
-                ReadTipoBairroDto tipoBairroDto = _mapper.Map<ReadTipoBairroDto>(tipoBairro);
+            DataTable tabela = _control.BuscaDados($"select * from tbTipoBairro where tipobairrocod = {id}");
 
-                return Ok(tipoBairroDto);
-            }
-            return NotFound();  
-        }
-
-        private IActionResult Ok(object tipoBairroDto)
-        {
-            throw new NotImplementedException();
+            Console.WriteLine("=========================");
+            Console.WriteLine(tabela.Rows[0]["tipobairrocod"].ToString());
+            Console.WriteLine(tabela.Rows[0]["tipobairronome"].ToString());
+            return Ok(tabela.Rows[0]["tipobairronome"].ToString());
         }
 
         [HttpPost]
