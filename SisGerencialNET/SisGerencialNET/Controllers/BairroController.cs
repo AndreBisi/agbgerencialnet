@@ -28,7 +28,7 @@ namespace SisGerencialNET.Controllers
             //var context2 = _context.Bairros
             //    .Include(a => a.TipoBairro);
 
-            var context2 = _context.TiposBairro.Include(a => a.Bairros);
+            var context2 = _context.TiposBairro;
 
             return Ok(context2);
         }

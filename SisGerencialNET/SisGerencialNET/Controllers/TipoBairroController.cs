@@ -36,10 +36,17 @@ namespace SisGerencialNET.Controllers.Data
         {
             DataTable tabela = _control.BuscaDados($"select * from tbTipoBairro where tipobairrocod = {id}");
 
+            TipoBairro tipoBairro = new TipoBairro();
+
             Console.WriteLine("=========================");
             Console.WriteLine(tabela.Rows[0]["tipobairrocod"].ToString());
             Console.WriteLine(tabela.Rows[0]["tipobairronome"].ToString());
-            return Ok(tabela.Rows[0]["tipobairronome"].ToString());
+
+            tipoBairro.Id = Int32.Parse ( tabela.Rows[0]["tipobairrocod"].ToString() );
+            tipoBairro.Nome = tabela.Rows[0]["tipobairronome"].ToString();
+            tipoBairro.Abreviacao = tabela.Rows[0]["tipobairroabrev"].ToString();
+
+            return Ok(tipoBairro);
         }
 
         [HttpPost]
