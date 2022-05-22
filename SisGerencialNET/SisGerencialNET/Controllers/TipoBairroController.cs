@@ -11,15 +11,13 @@ namespace SisGerencialNET.Controllers.Data
     [Route("[controller]")]
     public class TipoBairroController : ControllerBase
     {
-        private Context _context;
         private IMapper _mapper;
         private DataBasePersistenceControl _control = new DataBasePersistenceControl();
 
         DataBaseConnection _conexao = new DataBaseConnection();
 
-        public TipoBairroController(Context context, IMapper mapper)
+        public TipoBairroController(IMapper mapper)
         {
-            _context = context;
             _mapper = mapper;
         }
 
@@ -28,7 +26,21 @@ namespace SisGerencialNET.Controllers.Data
         [HttpGet]
         public IActionResult get()
         {
-            return Ok(_context.TiposBairro);
+            DataTable tabela = _control.BuscaDados($"select * from tbTipoBairro");
+
+            IList<ReadTipoBairroDto> tiposDeBairro = new List<ReadTipoBairroDto>();
+
+            var tipoBairro = new TipoBairro();
+            foreach( DataRow tb in tabela.Rows )
+            {
+                tipoBairro.Id = Int32.Parse(tb["tipobairrocod"].ToString());
+                tipoBairro.Nome = tb["tipobairronome"].ToString();
+                tipoBairro.Abreviacao = tb["tipobairroabrev"].ToString();
+
+                tiposDeBairro.Add(_mapper.Map<ReadTipoBairroDto>(tipoBairro));
+            }
+
+            return Ok(tiposDeBairro);
         }
 
         [HttpGet("{id}")]
@@ -36,34 +48,49 @@ namespace SisGerencialNET.Controllers.Data
         {
             DataTable tabela = _control.BuscaDados($"select * from tbTipoBairro where tipobairrocod = {id}");
 
-            TipoBairro tipoBairro = new TipoBairro();
+            if(tabela.Rows.Count > 0)
+            {
+                TipoBairro tipoBairro = new TipoBairro();
 
+<<<<<<< HEAD
             tipoBairro.Id = Int32.Parse ( tabela.Rows[0]["tipobairrocod"].ToString() );
             tipoBairro.Nome = tabela.Rows[0]["tipobairronome"].ToString();
             tipoBairro.Abreviacao = tabela.Rows[0]["tipobairroabrev"].ToString();
+=======
+                tipoBairro.Id = Int32.Parse(tabela.Rows[0]["tipobairrocod"].ToString());
+                tipoBairro.Nome = tabela.Rows[0]["tipobairronome"].ToString();
+                tipoBairro.Abreviacao = tabela.Rows[0]["tipobairroabrev"].ToString();
 
-            return Ok(tipoBairro);
+                ReadTipoBairroDto tipoBairroDto = _mapper.Map<ReadTipoBairroDto>(tipoBairro);
+>>>>>>> 4489f51a35e5941139b3684f45db7caf226449af
+
+                return Ok(tipoBairroDto);
+            }
+            return NotFound();
         }
 
         [HttpPost]
         public IActionResult post([FromBody] TipoBairro tipoBairro)
         {
-            _context.TiposBairro.Add(tipoBairro);
-            _context.SaveChanges();
-            return CreatedAtAction(nameof(getPorId), new { Id = tipoBairro.Id }, tipoBairro);
+            //            _context.TiposBairro.Add(tipoBairro);
+            //            _context.SaveChanges();
+            //            return CreatedAtAction(nameof(getPorId), new { Id = tipoBairro.Id }, tipoBairro);
+            return NotFound();
 
         }
 
         [HttpPut]
         public IActionResult put(int id, [FromBody] TipoBairro tipoBairro)
         {
-            TipoBairro tipoBairro2 = _context.TiposBairro.FirstOrDefault(t => t.Id == id);
-            if(tipoBairro2 == null)
-            {
-                return NotFound();
-            }
-            _context.SaveChanges();
-            return NoContent();
+            //           TipoBairro tipoBairro2 = _context.TiposBairro.FirstOrDefault(t => t.Id == id);
+            //          if (tipoBairro2 == null)
+            //         {
+            //            return NotFound();
+            //       }
+            //      _context.SaveChanges();
+            //     return NoContent();
+
+            return NotFound();
         }
     }
 }
