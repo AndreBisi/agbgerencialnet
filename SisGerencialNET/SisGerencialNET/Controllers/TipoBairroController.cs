@@ -38,10 +38,6 @@ namespace SisGerencialNET.Controllers.Data
 
             TipoBairro tipoBairro = new TipoBairro();
 
-            Console.WriteLine("=========================");
-            Console.WriteLine(tabela.Rows[0]["tipobairrocod"].ToString());
-            Console.WriteLine(tabela.Rows[0]["tipobairronome"].ToString());
-
             tipoBairro.Id = Int32.Parse ( tabela.Rows[0]["tipobairrocod"].ToString() );
             tipoBairro.Nome = tabela.Rows[0]["tipobairronome"].ToString();
             tipoBairro.Abreviacao = tabela.Rows[0]["tipobairroabrev"].ToString();
