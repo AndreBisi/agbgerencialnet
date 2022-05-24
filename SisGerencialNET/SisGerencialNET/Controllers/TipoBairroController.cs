@@ -35,7 +35,7 @@ namespace SisGerencialNET.Controllers.Data
         public ReadTipoBairroDto ReadTipoBairroDto { get; private set; }
 
         [HttpGet]
-        public IActionResult get()
+        public IActionResult Get()
         {
             DataTable tabela = _control.BuscaDados($"select * from tbTipoBairro");
 
@@ -50,7 +50,7 @@ namespace SisGerencialNET.Controllers.Data
         }
 
         [HttpGet("{id}")]
-        public IActionResult getPorId(int id)
+        public IActionResult GetPorId(int id)
         {
             DataTable tabela = _control.BuscaDados($"select * from tbTipoBairro where tipobairrocod = {id}");
 
@@ -62,14 +62,14 @@ namespace SisGerencialNET.Controllers.Data
         }
 
         [HttpPost]
-        public IActionResult post([FromBody] TipoBairro tipoBairro)
+        public IActionResult Post([FromBody] TipoBairro tipoBairro)
         {
             try
             {
                 _control.PersisteDados($"insert into tbtipobairro(tipobairrocod, tipobairronome, tipobairroabrev) " +
-                    $"values({tipoBairro.Id}, {tipoBairro.Nome}, {tipoBairro.Abreviacao}) ");
+                    $"values({tipoBairro.Id}, '{tipoBairro.Nome}', '{tipoBairro.Abreviacao}') ");
 
-                return CreatedAtAction(nameof(getPorId), new { Id = tipoBairro.Id }, tipoBairro);
+                return CreatedAtAction(nameof(GetPorId), new { Id = tipoBairro.Id }, tipoBairro);
             }
             catch (Exception ex)
             {
@@ -79,9 +79,38 @@ namespace SisGerencialNET.Controllers.Data
         }
 
         [HttpPut]
-        public IActionResult put(int id, [FromBody] TipoBairro tipoBairro)
+        public IActionResult Put(int id, [FromBody] TipoBairro tipoBairro)
         {
-            return NotFound();
+            try
+            {
+                _control.PersisteDados($"update tbtipobairro set tipobairronome = '{tipoBairro.Nome}', " +
+                    $"tipobairroabrev = '{tipoBairro.Abreviacao}' " +
+                    $"where tipobairrocod = {tipoBairro.Id}");
+
+                return NoContent();
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                _control.PersisteDados($"delete from tbtipobairro where tipobairrocod = {id}");
+
+                //se deletar
+                return NoContent();
+
+            }
+            catch
+            {
+                //se não achar
+                return NotFound();
+            }
         }
     }
 }
