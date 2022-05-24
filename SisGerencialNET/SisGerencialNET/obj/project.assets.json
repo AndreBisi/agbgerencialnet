@@ -977,26 +977,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\AndreBisi\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\andre.bisi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\AGBSoft\\CSharp\\SisGerencialNET\\SisGerencialNET\\SisGerencialNET\\SisGerencialNET.csproj",
+      "projectUniqueName": "C:\\AGBSoft\\CSharp\\agbgerencialnet\\SisGerencialNET\\SisGerencialNET\\SisGerencialNET.csproj",
       "projectName": "SisGerencialNET",
-      "projectPath": "C:\\AGBSoft\\CSharp\\SisGerencialNET\\SisGerencialNET\\SisGerencialNET\\SisGerencialNET.csproj",
-      "packagesPath": "C:\\Users\\AndreBisi\\.nuget\\packages\\",
-      "outputPath": "C:\\AGBSoft\\CSharp\\SisGerencialNET\\SisGerencialNET\\SisGerencialNET\\obj\\",
+      "projectPath": "C:\\AGBSoft\\CSharp\\agbgerencialnet\\SisGerencialNET\\SisGerencialNET\\SisGerencialNET.csproj",
+      "packagesPath": "C:\\Users\\andre.bisi\\.nuget\\packages\\",
+      "outputPath": "C:\\AGBSoft\\CSharp\\agbgerencialnet\\SisGerencialNET\\SisGerencialNET\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\AndreBisi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\andre.bisi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

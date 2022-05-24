@@ -73,8 +73,14 @@ namespace SisGerencialNET.Controllers.Data
             }
             catch (Exception ex)
             {
-                throw ex;
-                return NotFound(ex);
+                try
+                {
+                    return NotFound(ex);
+                }
+                catch
+                {
+                    throw ex;
+                }
             }
         }
 
@@ -83,7 +89,7 @@ namespace SisGerencialNET.Controllers.Data
         {
             try
             {
-                _control.PersisteDados($"update tbtipobairro set tipobairronome = '{tipoBairro.Nome}', " +
+                _control.PersisteDados($"UPDATE tbtipobairro set tipobairronome = '{tipoBairro.Nome}', " +
                     $"tipobairroabrev = '{tipoBairro.Abreviacao}' " +
                     $"where tipobairrocod = {tipoBairro.Id}");
 
@@ -100,7 +106,7 @@ namespace SisGerencialNET.Controllers.Data
         {
             try
             {
-                _control.PersisteDados($"delete from tbtipobairro where tipobairrocod = {id}");
+                _control.PersisteDados($"DELETE from tbtipobairro where tipobairrocod = {id}");
 
                 //se deletar
                 return NoContent();
