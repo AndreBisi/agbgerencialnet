@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using DataBaseControl;
 using Microsoft.AspNetCore.Mvc;
 using SisGerencialNET.Data.Dtos;
 using SisGerencialNET.Models;
@@ -66,7 +65,7 @@ namespace SisGerencialNET.Controllers.Data
         {
             try
             {
-                _control.PersisteDados($"insert into tbtipobairro(tipobairrocod, tipobairronome, tipobairroabrev) " +
+                _control.PersisteDados($"INSERT INTO tbtipobairro(tipobairrocod, tipobairronome, tipobairroabrev) " +
                     $"values({tipoBairro.Id}, '{tipoBairro.Nome}', '{tipoBairro.Abreviacao}') ");
 
                 return CreatedAtAction(nameof(GetPorId), new { Id = tipoBairro.Id }, tipoBairro);
@@ -106,7 +105,7 @@ namespace SisGerencialNET.Controllers.Data
         {
             try
             {
-                _control.PersisteDados($"DELETE from tbtipobairro where tipobairrocod = {id}");
+                _control.PersisteDados($"DELETE FROM tbtipobairro where tipobairrocod = {id}");
 
                 //se deletar
                 return NoContent();

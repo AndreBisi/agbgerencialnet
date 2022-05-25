@@ -1,7 +1,7 @@
 ﻿using Npgsql;
 
 
-namespace DataBaseControl
+namespace SisGerencialNET
 {
     /// <summary>
     /// Classe utilizada para o controle de conexão da base de dados

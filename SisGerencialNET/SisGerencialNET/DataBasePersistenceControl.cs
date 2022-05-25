@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Collections.Generic;
 using Npgsql;
 
-namespace DataBaseControl
+namespace SisGerencialNET
 {
     /// <summary>
     /// Classe utilizada para o controle de persistência da base de dados.
@@ -50,7 +50,21 @@ namespace DataBaseControl
         {
             try
             {
-                DataBaseConnection ConexaoBD = new DataBaseConnection();
+                DataBaseConnection con = new DataBaseConnection();                
+
+                using var cmd = new NpgsqlCommand(ScriptSql, con.StartDataBaseConnection());
+
+                cmd.Prepare();
+
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+/*
+               DataBaseConnection ConexaoBD = new DataBaseConnection();
                 DataSet DTSet = new DataSet();
 
                 NpgsqlDataAdapter AdaptSQL = new NpgsqlDataAdapter(ScriptSql, ConexaoBD.StartDataBaseConnection());
@@ -78,7 +92,7 @@ namespace DataBaseControl
             catch (Exception ex)
             {
                 throw ex;
-            }
+            }*/
         }
 
         /// <summary>
