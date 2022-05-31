@@ -61,10 +61,12 @@ namespace SisGerencialNET.Controllers.Data
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] TipoBairro tipoBairro)
+        public IActionResult Post([FromBody] CreateTipoBairroDto tipoBairroDto)
         {
             try
             {
+                TipoBairro tipoBairro = _mapper.Map<TipoBairro>(tipoBairroDto);
+
                 _control.PersisteDados($"INSERT INTO tbtipobairro(tipobairrocod, tipobairronome, tipobairroabrev) " +
                     $"values({tipoBairro.Id}, '{tipoBairro.Nome}', '{tipoBairro.Abreviacao}') ");
 
@@ -77,10 +79,12 @@ namespace SisGerencialNET.Controllers.Data
         }
 
         [HttpPut]
-        public IActionResult Put(int id, [FromBody] TipoBairro tipoBairro)
+        public IActionResult Put([FromBody] UpdateTipoBairroDto tipoBairroDto)
         {
             try
             {
+                TipoBairro tipoBairro = _mapper.Map<TipoBairro>(tipoBairroDto);
+
                 _control.PersisteDados($"UPDATE tbtipobairro set tipobairronome = '{tipoBairro.Nome}', " +
                     $"tipobairroabrev = '{tipoBairro.Abreviacao}' " +
                     $"where tipobairrocod = {tipoBairro.Id}");

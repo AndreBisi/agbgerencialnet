@@ -9,6 +9,8 @@ namespace SisGerencialNET.Profiles
         public TipoBairroProfile()
         {
             CreateMap<TipoBairro, ReadTipoBairroDto>();
+            CreateMap<CreateTipoBairroDto, TipoBairro>();
+            CreateMap<UpdateTipoBairroDto, TipoBairro>();
         }
     }
 }
