@@ -1,4 +1,4 @@
-﻿namespace SisGerencialNET.Data.Dtos
+﻿namespace SisGerencialNET.Data.Dtos.TipoBairroDto
 {
     public class ReadTipoBairroDto
     {

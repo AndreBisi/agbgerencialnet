@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using SisGerencialNET.Data.Dtos;
+using SisGerencialNET.Data.Dtos.TipoBairroDto;
 using SisGerencialNET.Models;
 
 namespace SisGerencialNET.Profiles

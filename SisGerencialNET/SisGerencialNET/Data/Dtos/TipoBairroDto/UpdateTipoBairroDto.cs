@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SisGerencialNET.Data.Dtos
+namespace SisGerencialNET.Data.Dtos.TipoBairroDto
 {
     public class UpdateTipoBairroDto
     {

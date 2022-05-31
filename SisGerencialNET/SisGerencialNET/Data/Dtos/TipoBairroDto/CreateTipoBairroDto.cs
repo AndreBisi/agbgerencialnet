@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SisGerencialNET.Data.Dtos
+namespace SisGerencialNET.Data.Dtos.TipoBairroDto
 {
     public class CreateTipoBairroDto
     {
@@ -9,6 +9,6 @@ namespace SisGerencialNET.Data.Dtos
         [Required(ErrorMessage = "O nome é obrigatório")]
         public string Nome { get; set; }
         public string Abreviacao { get; set; }
-        
+
     }
 }

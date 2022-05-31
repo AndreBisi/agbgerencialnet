@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using SisGerencialNET.Data.Dtos;
+using SisGerencialNET.Data.Dtos.TipoBairroDto;
 using SisGerencialNET.Models;
 using System.Data;
 
