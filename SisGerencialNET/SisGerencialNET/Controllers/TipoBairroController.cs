@@ -72,14 +72,7 @@ namespace SisGerencialNET.Controllers.Data
             }
             catch (Exception ex)
             {
-                try
-                {
-                    return NotFound(ex);
-                }
-                catch
-                {
-                    throw ex;
-                }
+                return NotFound(ex.Message);
             }
         }
 
@@ -94,9 +87,9 @@ namespace SisGerencialNET.Controllers.Data
 
                 return NoContent();
             }
-            catch
+            catch (Exception ex)
             {
-                return NotFound();
+                return NotFound(ex.Message);
             }
         }
 
@@ -107,14 +100,12 @@ namespace SisGerencialNET.Controllers.Data
             {
                 _control.PersisteDados($"DELETE FROM tbtipobairro where tipobairrocod = {id}");
 
-                //se deletar
                 return NoContent();
 
             }
-            catch
+            catch( Exception ex )
             {
-                //se não achar
-                return NotFound();
+                return NotFound(ex.Message);
             }
         }
     }
