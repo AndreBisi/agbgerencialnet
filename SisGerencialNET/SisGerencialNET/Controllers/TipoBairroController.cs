@@ -12,6 +12,7 @@ namespace SisGerencialNET.Controllers.Data
     {
         private IMapper _mapper;
         private DataBasePersistenceControl _control = new DataBasePersistenceControl();
+        public ReadTipoBairroDto ReadTipoBairroDto { get; private set; }
 
         DataBaseConnection _conexao = new DataBaseConnection();
 
@@ -30,8 +31,6 @@ namespace SisGerencialNET.Controllers.Data
 
             return _mapper.Map<ReadTipoBairroDto>(tipoBairro);
         }
-
-        public ReadTipoBairroDto ReadTipoBairroDto { get; private set; }
 
         [HttpGet]
         public IActionResult Get()

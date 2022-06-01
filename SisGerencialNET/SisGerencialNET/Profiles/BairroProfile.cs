@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using SisGerencialNET.Data.Dtos;
+using SisGerencialNET.Data.Dtos.BairroDto;
 using SisGerencialNET.Models;
 
 namespace SisGerencialNET.Profiles
@@ -8,7 +8,10 @@ namespace SisGerencialNET.Profiles
     {
         public BairroProfile()
         {
+            CreateMap<CreateBairroDto, Bairro>();
             CreateMap<Bairro, ReadBairroDto>();
+            CreateMap<UpdateBairroDto, Bairro>();
+
         }
     }
 }
