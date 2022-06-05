@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using SisGerencialNET.Controllers.Data;
 using SisGerencialNET.Data.Dtos.BairroDto;
 using SisGerencialNET.Models;
@@ -30,10 +29,13 @@ namespace SisGerencialNET.Controllers
 
             bairro.Id = Int32.Parse(dataRow["bairrocod"].ToString());
             bairro.Nome = dataRow["bairronome"].ToString();
-            bairro.TipoBairro.Id = Int32.Parse( dataRow["tipobairrocod"].ToString() );
-            bairro.TipoBairro.Nome = dataRow["tipobairronome"].ToString();
-            bairro.TipoBairro.Abreviacao = dataRow["tipobairroabrev"].ToString();
 
+            if ( (dataRow["tipobairrocod"].ToString()) != "")
+            {
+                bairro.TipoBairro.Id = Int32.Parse( dataRow["tipobairrocod"].ToString() );
+                bairro.TipoBairro.Nome = dataRow["tipobairronome"].ToString();
+                bairro.TipoBairro.Abreviacao = dataRow["tipobairroabrev"].ToString();
+            }
             return _mapper.Map<ReadBairroDto>(bairro);
         }
 

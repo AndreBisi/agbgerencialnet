@@ -6,5 +6,10 @@
         public string Nome { get; set; }
         public int? TipoBairroID { get; set; }
         public TipoBairro TipoBairro { get; set; }
+
+        public Bairro()
+        {
+            TipoBairro = new TipoBairro();
+        }
     }
 }
