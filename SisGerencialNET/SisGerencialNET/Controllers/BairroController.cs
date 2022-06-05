@@ -30,12 +30,15 @@ namespace SisGerencialNET.Controllers
             bairro.Id = Int32.Parse(dataRow["bairrocod"].ToString());
             bairro.Nome = dataRow["bairronome"].ToString();
 
+            TipoBairro tipoBairro = new TipoBairro();
+
             if ( (dataRow["tipobairrocod"].ToString()) != "")
             {
-                bairro.TipoBairro.Id = Int32.Parse( dataRow["tipobairrocod"].ToString() );
-                bairro.TipoBairro.Nome = dataRow["tipobairronome"].ToString();
-                bairro.TipoBairro.Abreviacao = dataRow["tipobairroabrev"].ToString();
+                tipoBairro.Id = Int32.Parse( dataRow["tipobairrocod"].ToString() );
+                tipoBairro.Nome = dataRow["tipobairronome"].ToString();
+                tipoBairro.Abreviacao = dataRow["tipobairroabrev"].ToString();
             }
+            bairro.TipoBairro = tipoBairro; 
             return _mapper.Map<ReadBairroDto>(bairro);
         }
 
