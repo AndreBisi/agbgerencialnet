@@ -48,21 +48,21 @@ namespace SisGerencialNET
         /// <param name="ScriptSql">Script Sql para a persistência de dados</param>
         public void PersisteDados(String ScriptSql)
         {
+            DataBaseConnection con = new DataBaseConnection();                
+
+            using var cmd = new NpgsqlCommand(ScriptSql, con.StartDataBaseConnection());
+
+            cmd.Prepare();
+
             try
             {
-                DataBaseConnection con = new DataBaseConnection();                
-
-                using var cmd = new NpgsqlCommand(ScriptSql, con.StartDataBaseConnection());
-
-                cmd.Prepare();
-
                 cmd.ExecuteNonQuery();
-
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+
 /*
                DataBaseConnection ConexaoBD = new DataBaseConnection();
                 DataSet DTSet = new DataSet();
